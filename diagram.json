@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Parthib Biswas",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 48, "left": -81.56, "attrs": {} },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -45.02,
+      "left": -54.68,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "imu1:VCC", "green", [ "h76.95", "v-105.6" ] ],
+    [ "imu1:GND", "esp:GND.2", "black", [ "h164.04", "v67.72" ] ],
+    [ "esp:22", "imu1:SCL", "violet", [ "h-163.2", "v-76.8" ] ],
+    [ "esp:21", "imu1:SDA", "purple", [ "h-163.2", "v-96" ] ]
+  ],
+  "dependencies": {}
+}
